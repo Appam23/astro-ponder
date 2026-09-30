@@ -1,0 +1,25 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header>
+  <nav aria-label="Main navigation">
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/contact/">Contact</HeaderLink>
+    <HeaderLink href="/posts/">Posts</HeaderLink>
+    <HeaderLink href="/cart/">Cart</HeaderLink>
+  </nav>
+</header>
+
+<style>
+  header {
+    background-color: #222;
+    padding: 1rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = await getCollection("posts");
+const title = "Posts";
+---
+
+<BaseLayout title={title}>
+  <section>
+    <h2>Posts</h2>
+
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/posts/${post.id}/`}>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <small>
+                {post.data.pubDate.toLocaleDateString()}
+              </small>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
